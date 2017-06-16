@@ -18,7 +18,7 @@ var _init = {
     fouls: 0
   },
   time: {
-    periodTime: 10,
+    periodTime: 10 * 60,
     periods: 4,
     running: false,
     remainingTime: -1,
