@@ -32,8 +32,8 @@ var _timer;
 function handleKeypress(event) {
 
   if ($(event.target).is('input, textarea, select')) {
-    _data.home.score = Number.parseInt($('#score_home'));
-    _data.guest.score = Number.parseInt($('#score_guest'));
+    _data.home.score = Number.parseInt($('#score_home').val());
+    _data.guest.score = Number.parseInt($('#score_guest').val());
 
     updateView();
   } else {
@@ -70,6 +70,10 @@ function handleKeypress(event) {
         case 'q':
           // reset dialog
           $('#resetModal').modal('show');
+          break;
+        case 'h':
+          $('.help-content').toggle();
+          $('.help-trigger').toggle();
           break;
       }
 
@@ -181,5 +185,5 @@ toggleTime(_data.time.running);
 updateTime();
 
 // bind events
-$(document).on('keypress', 'body', handleKeypress);
+$(document).on('keyup', 'body', handleKeypress);
 $(document).on('click', '#resetTime, #resetScores, #resetAll', handleReset);

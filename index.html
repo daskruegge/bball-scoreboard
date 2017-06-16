@@ -72,6 +72,23 @@
       background-color: red;
     }
 
+    .help-trigger,
+    .help-content {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      color: #585858;
+    }
+
+    .help-content {
+      display: none;
+      color: #959595;
+    }
+
+    .help-content td {
+      padding: 5px 40px 0px 0px;
+    }
+
   </style>
 </head>
 
@@ -104,6 +121,30 @@
 
   </div>
 
+  <div class="help-trigger">
+    'h' für Hilfe
+  </div>
+  <div class="help-content">
+    <table>
+      <tr>
+        <td>'A' + 'S'</td>
+        <td>HOME Score +/-</td>
+      </tr>
+      <tr>
+        <td>'K' + 'L'</td>
+        <td>GUEST Score +/-</td>
+      </tr>
+      <tr>
+        <td>Leertaste</td>
+        <td>Zeit Start/Stop</td>
+      </tr>
+      <tr>
+        <td>'Q'</td>
+        <td>Reset</td>
+      </tr>
+    </table>
+  </div>
+
   <!-- Modal -->
   <div id="resetModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -121,7 +162,7 @@
     </div>
   </div>
 
-  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="scoreboard.js"></script>
 </body>
