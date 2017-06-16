@@ -7,8 +7,9 @@ Number.prototype.pad = function (size) {
 }
 
 var _init = {
+  version: 1,
   home: {
-    name: 'BASKETS',
+    name: 'TSV',
     score: 0,
     fouls: 0
   },
@@ -158,8 +159,8 @@ function updateView() {
   $('#score_home').val(_data.home.score);
   $('#score_guest').val(_data.guest.score);
 
-  $('#name_home').html(_data.home.name || 'HOME');
-  $('#name_guest').html(_data.guest.name || 'GUEST');
+  $('#name_home').html(_init.home.name || 'HOME');
+  $('#name_guest').html(_init.guest.name || 'GUEST');
 
   // save current values
   localStorage.setItem('scoreboard.current', JSON.stringify(_data));
