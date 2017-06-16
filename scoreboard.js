@@ -80,7 +80,7 @@ function handleKeypress(event) {
 function handleReset(event) {
   switch ($(this).data('type')) {
     case 'all':
-      _data.time.remainingTime = _data.time.periodTime;
+      _data.time.remainingTime = _init.time.periodTime;
       _data.time.lastRemainingTime = 0;
       _data.time.running = false;
       _data.time.started = 0;
@@ -88,7 +88,7 @@ function handleReset(event) {
       _data.guest.score = 0;
       break;
     case 'time':
-      _data.time.remainingTime = _data.time.periodTime;
+      _data.time.remainingTime = _init.time.periodTime;
       _data.time.lastRemainingTime = 0;
       _data.time.running = false;
       _data.time.started = 0;
@@ -169,7 +169,7 @@ function init() {
   var current = JSON.parse(localStorage.getItem('scoreboard.current') || '{}');
   _data = $.extend(true, {}, _init, current);
   if (_data.time.remainingTime === -1) {
-    _data.time.remainingTime = _data.time.periodTime;
+    _data.time.remainingTime = _init.time.periodTime;
   }
 }
 
